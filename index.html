@@ -11,16 +11,28 @@
     <p> Trykk her for å få informorasjon:</p>
     <button id="knapp">Trykk her</button>
     <div id="utskrift"></div>
+    <div id="utskrift2"></div>
 
     <script>
         var knappEl = document.getElementById("knapp");
         var utskriftEl = document.getElementById("utskrift");
+        var utskrift2El = document.getElementById("utskrift2");
+
 
         knappEl.addEventListener("click", function(){
-            utskrift = "Velkommen til min nettside. jeg heter sigurd, Hva heter du?  hei på deg eyeyhdn fack deg eeyhdh";
+            utskrift = "Hva heter du? <input type='text' id='navn' name='navnInput'> <button id='knapp2'> Bekreft </button>";
 
             utskriftEl.innerHTML = utskrift;
-        });
+       
+
+        var knapp2El = document.getElementById("knapp2");
+        knapp2.addEventListener("click", function(){
+            var navnInput = document.getElementById("navn").value;
+            utskrift = "Du heter " + navnInput + "!";
+
+            utskrift2El.innerHTML = utskrift;
+        })
+    });
     </script>
 </body>
 </html>
