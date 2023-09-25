@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,6 +13,17 @@
     <button id="knapp">Trykk her</button>
     <div id="utskrift"></div>
     <div id="utskrift2"></div>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="sigurd.jpg" alt="Clickable Image" id="clickable-image">
+            <div class="overlay" id="overlay">
+                <div class="text">
+                    <p>Hei jeg heter sigurd og er liker å spille fotball!</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         var knappEl = document.getElementById("knapp");
@@ -32,6 +44,14 @@
 
             utskrift2El.innerHTML = utskrift;
         })
+    });
+
+    const clickableImage = document.getElementById('clickable-image');
+    const overlay = document.getElementById('overlay');
+
+    clickableImage.addEventListener('click', () => {
+        overlay.style.opacity = 1;
+        overlay.style.visibility = 'visible';
     });
     </script>
 </body>
